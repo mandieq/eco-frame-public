@@ -1,5 +1,6 @@
-# eco-frame-public
-Ecosystem Framework - anonymised version of a tool using IBM Cloud, python and Dash from plot.ly to dig into the capabilities of different AI focused software.
+# Ecosystem Framework
+
+This is an anonymised version of a tool using IBM Cloud, python and Dash from plot.ly to dig into the capabilities of different AI focused software.
 
 This repository contains code referred to in a series of blog posts on [Medium](https://medium.com/@mandieq).
 
