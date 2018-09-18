@@ -9,15 +9,16 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
+# read in data from csv file
 df = pd.read_csv('software_details.csv',index_col=0)
 
 df = df.T.iloc[::-1] 		# transform and reverse rows (to get caps in right order for heat map)
 df = df.T 							# and then transform it back again.
 
 app = dash.Dash(__name__)
-
 server = app.server
 
+# Change the title of the page from the default "Dash"
 app.title = "Application heatmap"
 
 # Using external css from chriddyp from plotly for ease
@@ -33,7 +34,7 @@ app.layout = html.Div([
 	html.H1('Ecosystem Framework'),
 	html.H2('Application heatmap - choose from the drop down list to add'),
     dcc.Dropdown(
-        placeholder=['Select ISV name(s)'],
+        placeholder=['Select application name(s)'],
         options=[{'label': i, 'value': i} for i in df.index],
         multi=True,
         id='isv_select'
