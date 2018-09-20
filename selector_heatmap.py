@@ -43,18 +43,18 @@ app.layout = html.Div([
 ])
 
 @app.callback(
-	Output('heatmap_output', 'figure'), 
+	Output('heatmap_output', 'figure'),
 	[Input('isv_select', 'value')])
 def update_figure(value):
-	if value is None:
-		return {'data': []}
-	else:
-		dff = df.loc[value,:]
-		scaled_size = left_margin + right_margin + 150*len(value)
-    	return {
+    if value is None:
+        return {'data': []}
+    else:
+        dff = df.loc[value,:]
+        scaled_size = left_margin + right_margin + 150*len(value)
+        return {
             'data': [{
                 'z': dff.values.T.tolist(),
-                'y': dff.columns.tolist(), 
+                'y': dff.columns.tolist(),
                 'x': dff.index.tolist(),
                 'ygap': 2,
                 'reversescale': 'true',
