@@ -1,0 +1,8 @@
+---
+applications:
+- path: .
+  memory: 256M
+  name: eco-frame
+  disk_quota: 1024M
+  health_check_type: http
+ 
